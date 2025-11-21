@@ -4,7 +4,31 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/react-learning-monorepo"
+      "path": "./apps/task-tracker"
+    },
+    {
+      "path": "./apps/feedback-form"
+    },
+    {
+      "path": "./apps/blog-platform"
+    },
+    {
+      "path": "./apps/product-catalog"
+    },
+    {
+      "path": "./apps/ecommerce-platform"
+    },
+    {
+      "path": "./libs/types"
+    },
+    {
+      "path": "./libs/utils"
+    },
+    {
+      "path": "./libs/hooks"
+    },
+    {
+      "path": "./libs/ui-components"
     }
   ]
 }

@@ -16,6 +16,16 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
-    "customConditions": ["@react-learning-monorepo/source"]
+    "exactOptionalPropertyTypes": true,
+    "noUncheckedIndexedAccess": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "customConditions": ["@react-learning-monorepo/source"],
+    "baseUrl": ".",
+    "paths": {
+      "@task-tracker/*": ["apps/task-tracker/src/*"],
+      "@feedback-form/*": ["apps/feedback-form/src/*"],
+      "@blog-platform/*": ["apps/blog-platform/src/*"],
+      "@libs/*": ["libs/*"]
+    }
   }
 }

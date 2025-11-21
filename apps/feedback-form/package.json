@@ -1,0 +1,6 @@
+{
+  "name": "@react-learning-monorepo/feedback-form",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module"
+}
