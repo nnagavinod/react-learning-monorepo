@@ -9,7 +9,7 @@ import {
   Stack,
   IconButton,
   Message,
-  toaster,
+  useToaster,
 } from 'rsuite';
 import { Close, Trash } from '@rsuite/icons';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
@@ -33,6 +33,7 @@ import {
 } from '@react-learning-monorepo/utils';
 
 export function ShoppingCart() {
+  const toaster = useToaster();
   const dispatch = useAppDispatch();
   const cartItems = useAppSelector(selectCartItems);
   const isOpen = useAppSelector(selectCartIsOpen);

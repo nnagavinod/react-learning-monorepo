@@ -2,11 +2,8 @@ import { Badge, IconButton, Divider, FlexboxGrid } from 'rsuite';
 import MenuIcon from '@rsuite/icons/Menu';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { selectGridView, selectCartTotalQuantity } from '../store/selectors';
-import {
-  toggleSidebar,
-  toggleGridView,
-  openCartModal,
-} from '../store/slices/uiSlice';
+import { toggleSidebar, toggleGridView } from '../store/slices/uiSlice';
+import { openCart } from '../store/slices/cartSlice';
 
 export function AppHeader() {
   const dispatch = useAppDispatch();
@@ -102,7 +99,7 @@ export function AppHeader() {
           className="animate-fade-in"
         >
           <button
-            onClick={() => dispatch(openCartModal())}
+            onClick={() => dispatch(openCart())}
             className="relative p-3 text-gray-700 bg-gray-100 hover:bg-indigo-50 hover:text-indigo-600 rounded-lg transition-all border border-gray-200"
             title="Shopping Cart"
           >
