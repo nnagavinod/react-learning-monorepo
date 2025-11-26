@@ -1,18 +1,10 @@
 // Import product types
 import type {
+  CartItem,
   Product,
   ProductCategory,
-  ProductsResponse,
-  ProductFilters,
-  ProductSortOption,
-  CartItem,
-  Cart,
-  ProductListState,
   ProductDetailModalState,
-  ApiError,
-  Review,
-  ProductMeta,
-  ProductDimensions
+  ProductFilters
 } from './product.types'
 
 // Redux Store Configuration Types
@@ -93,17 +85,6 @@ export interface ProductSelectors {
 
 // Re-export product types for convenience
 export type {
-  Product,
-  ProductCategory,
-  ProductsResponse,
-  ProductFilters,
-  ProductSortOption,
-  CartItem,
-  Cart,
-  ProductListState,
-  ProductDetailModalState,
-  ApiError,
-  Review,
-  ProductMeta,
-  ProductDimensions
+  ApiError, Cart, CartItem, Product,
+  ProductCategory, ProductDetailModalState, ProductDimensions, ProductFilters, ProductListState, ProductMeta, ProductSortOption, ProductsResponse, Review
 } from './product.types'
