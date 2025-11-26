@@ -8,6 +8,8 @@ import {
   Divider,
   Stack,
   IconButton,
+  Message,
+  toaster,
 } from 'rsuite';
 import { Close, Trash } from '@rsuite/icons';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
@@ -43,7 +45,16 @@ export function ShoppingCart() {
   };
 
   const handleRemoveItem = (productId: number) => {
+    const item = cartItems.find((item) => item.id === productId);
     dispatch(removeFromCart(productId));
+    if (item) {
+      toaster.push(
+        <Message showIcon type="info" closable>
+          <strong>{item.product.title}</strong> removed from cart
+        </Message>,
+        { placement: 'topEnd', duration: 2500 }
+      );
+    }
   };
 
   const handleUpdateQuantity = (productId: number, quantity: number) => {
@@ -56,6 +67,12 @@ export function ShoppingCart() {
 
   const handleClearCart = () => {
     dispatch(clearCart());
+    toaster.push(
+      <Message showIcon type="warning" closable>
+        Cart cleared
+      </Message>,
+      { placement: 'topEnd', duration: 2000 }
+    );
   };
 
   const isEmpty = cartItems.length === 0;
