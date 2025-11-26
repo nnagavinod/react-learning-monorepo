@@ -191,7 +191,10 @@ export function ShoppingCart() {
                             <InputNumber
                               value={item.quantity}
                               onChange={(value) =>
-                                handleUpdateQuantity(item.id, Number(value) || 1)
+                                handleUpdateQuantity(
+                                  item.id,
+                                  Number(value) || 1
+                                )
                               }
                               min={1}
                               max={99}

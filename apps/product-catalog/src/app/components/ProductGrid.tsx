@@ -27,32 +27,28 @@ export function ProductGrid() {
   // Use search query if there's a search term, otherwise get all products
   const shouldUseSearch = currentSearch.trim().length > 0;
 
-  const {
-    isLoading: isLoadingProducts,
-    error: productsError,
-  } = useGetProductsQuery(
-    {
-      limit: 30,
-      skip: 0,
-    },
-    {
-      skip: shouldUseSearch,
-    }
-  );
+  const { isLoading: isLoadingProducts, error: productsError } =
+    useGetProductsQuery(
+      {
+        limit: 30,
+        skip: 0,
+      },
+      {
+        skip: shouldUseSearch,
+      }
+    );
 
-  const {
-    isLoading: isLoadingSearch,
-    error: searchError,
-  } = useSearchProductsQuery(
-    {
-      q: currentSearch,
-      limit: 30,
-      skip: 0,
-    },
-    {
-      skip: !shouldUseSearch,
-    }
-  );
+  const { isLoading: isLoadingSearch, error: searchError } =
+    useSearchProductsQuery(
+      {
+        q: currentSearch,
+        limit: 30,
+        skip: 0,
+      },
+      {
+        skip: !shouldUseSearch,
+      }
+    );
 
   const isLoading = isLoadingProducts || isLoadingSearch;
   const error = productsError || searchError;
