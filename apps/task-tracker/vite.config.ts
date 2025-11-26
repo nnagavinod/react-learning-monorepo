@@ -29,10 +29,6 @@ export default defineConfig(() => ({
       '@libs': path.resolve(__dirname, '../../libs'),
     },
   },
-  // Uncomment this if you are using workers.
-  // worker: {
-  //  plugins: [],
-  // },
   build: {
     outDir: './dist',
     emptyOutDir: true,
