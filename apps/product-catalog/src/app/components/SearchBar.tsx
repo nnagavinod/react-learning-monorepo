@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Input, InputGroup, Button, FlexboxGrid } from 'rsuite';
+import { Input, Button } from 'rsuite';
 import SearchIcon from '@rsuite/icons/Search';
 import CloseIcon from '@rsuite/icons/Close';
 import { useAppDispatch, useAppSelector } from '../store/hooks';

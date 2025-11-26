@@ -1,4 +1,4 @@
-import { Badge, IconButton, Divider, FlexboxGrid } from 'rsuite';
+import { Badge, IconButton, FlexboxGrid } from 'rsuite';
 import MenuIcon from '@rsuite/icons/Menu';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { selectGridView, selectCartTotalQuantity } from '../store/selectors';

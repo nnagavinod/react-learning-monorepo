@@ -5,7 +5,6 @@ import {
   selectGridView,
   selectItemsPerRow,
   selectCurrentSearch,
-  selectFilters,
   makeSelectIsProductInCart,
 } from '../store/selectors';
 import {
@@ -21,17 +20,14 @@ import {
 import type { Product } from '@react-learning-monorepo/types';
 
 export function ProductGrid() {
-  const dispatch = useAppDispatch();
   const gridView = useAppSelector(selectGridView);
   const itemsPerRow = useAppSelector(selectItemsPerRow);
   const currentSearch = useAppSelector(selectCurrentSearch);
-  const filters = useAppSelector(selectFilters);
 
   // Use search query if there's a search term, otherwise get all products
   const shouldUseSearch = currentSearch.trim().length > 0;
 
   const {
-    data: productsData,
     isLoading: isLoadingProducts,
     error: productsError,
   } = useGetProductsQuery(
@@ -45,7 +41,6 @@ export function ProductGrid() {
   );
 
   const {
-    data: searchData,
     isLoading: isLoadingSearch,
     error: searchError,
   } = useSearchProductsQuery(
@@ -61,8 +56,6 @@ export function ProductGrid() {
 
   const isLoading = isLoadingProducts || isLoadingSearch;
   const error = productsError || searchError;
-  const data = shouldUseSearch ? searchData : productsData;
-  const products = data?.products || [];
 
   // Apply client-side filtering and sorting
   const processedProducts = useAppSelector(selectProcessedProducts);
@@ -118,7 +111,7 @@ export function ProductGrid() {
 
   // List view
   return (
-    <div className="space-y-4">
+    <div className="grid grid-cols-2 gap-4">
       {processedProducts.map((product: Product) => (
         <ProductListItem key={product.id} product={product} />
       ))}
